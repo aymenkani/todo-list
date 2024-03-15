@@ -1,0 +1,97 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #new-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 95%;
+    transform-origin: center;
+    margin-bottom: 20px;
+  }
+  
+  #todo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 20px;
+    grid-auto-flow:row;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .list-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 20rem;
+    height: 20rem;
+
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #fff;
+    transition: transform .2s;
+    
+    /*animation: popUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;*/
+  }
+
+  
+  .list-card span {
+    
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 100%;
+    flex-grow: 1;
+    word-wrap: break-word;
+    width: 100%;
+    overflow-y: auto;
+
+}
+
+  
+  
+  .list-card button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: white;
+    color: #939393;
+    cursor: pointer;
+    border-radius: 100%;
+    height: 2rem;
+    width: 2rem;
+    padding: .5rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(10px) translateY(-10px);
+    transition: transform .2s;
+  }
+
+  .list-card:hover button {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    #todo-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
